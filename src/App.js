@@ -45,7 +45,8 @@ function App() {
       e.preventDefault()
     //   To prevent Blank Items do not get submitted
     if(!newItem) return
-      console.log('submit')
+    setNewItem('')
+      
 
   }
 
