@@ -43,6 +43,7 @@ function App() {
 
   const handleSubmit = (e) => {
       console.log('submit')
+
   }
 
   return (
@@ -51,8 +52,8 @@ function App() {
     <AddItem
     newItem = {newItem}
     setNewItem = {setNewItem}
-    handkeSubmit = {handleSubmit}/>
-    
+    handleSubmit = {handleSubmit}/>
+
     <Content
     items = {items}
     handleCheck = {handleCheck}
