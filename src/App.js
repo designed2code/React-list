@@ -29,6 +29,10 @@ function App() {
     //   Incrementing the id when adding new item
     // If there are items present then get the id of the last element and add one to it else if no items present then the id will be 1
     const id = items.length ? items[items.length - 1].id + 1 : 1
+    // Creating the newItem (Initially checked will be false since its a new item)
+    const myNewItem = {id, checked:false, item}
+    // New listItems will be all the previous items and the newItem added
+    const listItems = [...items, myNewItem]
     }
     const handleCheck = (id) => {
       // CheckBox Logic
@@ -50,6 +54,7 @@ function App() {
       e.preventDefault()
     //   To prevent Blank Items do not get submitted
     if(!newItem) return
+    addItem(newItem)
     setNewItem('')
       
 
