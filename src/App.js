@@ -24,7 +24,7 @@ function App() {
         }
     ])
     const[newItem, setNewItem] = useState('')
-    
+
     const handleCheck = (id) => {
       // CheckBox Logic
       // If the item is already checked and if we click again then make it false with !item.checked else check the item
@@ -41,10 +41,18 @@ function App() {
       localStorage.setItem('shoppinglist', JSON.stringify(listItems))
   }
 
+  const handleSubmit = (e) => {
+      console.log('submit')
+  }
+
   return (
     <div className='App'>
     <Header/>
-    <AddItem/>
+    <AddItem
+    newItem = {newItem}
+    setNewItem = {setNewItem}
+    handkeSubmit = {handleSubmit}/>
+    
     <Content
     items = {items}
     handleCheck = {handleCheck}
