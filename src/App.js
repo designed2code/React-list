@@ -24,7 +24,12 @@ function App() {
         }
     ])
     const[newItem, setNewItem] = useState('')
-
+    
+    const addItem = (item) => {
+    //   Incrementing the id when adding new item
+    // If there are items present then get the id of the last element and add one to it else if no items present then the id will be 1
+    const id = items.length ? items[items.length - 1].id + 1 : 1
+    }
     const handleCheck = (id) => {
       // CheckBox Logic
       // If the item is already checked and if we click again then make it false with !item.checked else check the item
