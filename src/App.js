@@ -23,7 +23,8 @@ function App() {
             item: "Item 3"
         }
     ])
-
+    const[newItem, setNewItem] = useState('')
+    
     const handleCheck = (id) => {
       // CheckBox Logic
       // If the item is already checked and if we click again then make it false with !item.checked else check the item
