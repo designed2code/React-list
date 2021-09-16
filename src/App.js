@@ -43,6 +43,8 @@ function App() {
 
   const handleSubmit = (e) => {
       e.preventDefault()
+    //   To prevent Blank Items do not get submitted
+    if(!newItem) return
       console.log('submit')
 
   }
