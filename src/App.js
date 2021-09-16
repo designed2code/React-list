@@ -25,6 +25,11 @@ function App() {
     ])
     const[newItem, setNewItem] = useState('')
     
+    const setAndSaveItems = (newItems) => {
+      setItems(newItems)
+      localStorage.setItem('shoppinglist', JSON.stringify(newItems))
+    }
+
     const addItem = (item) => {
     //   Incrementing the id when adding new item
     // If there are items present then get the id of the last element and add one to it else if no items present then the id will be 1
@@ -33,21 +38,20 @@ function App() {
     const myNewItem = {id, checked:false, item}
     // New listItems will be all the previous items and the newItem added
     const listItems = [...items, myNewItem]
+    setAndSaveItems(listItems)
     }
     const handleCheck = (id) => {
       // CheckBox Logic
       // If the item is already checked and if we click again then make it false with !item.checked else check the item
       const listItems = items.map((item) => item.id === id ? {...item,checked: !item.checked} : item)
       console.log(listItems)
-      setItems(listItems)
-      localStorage.setItem('shoppinglist', JSON.stringify(listItems))
+      setAndSaveItems(listItems)
   }
   const deleteHandler = (id) => {
       // Delete Logic 
       // So for example if you click on first element that is your id = 1 and item.id = 1
       const listItems = items.filter((item) => item.id !== id)
-      setItems(listItems)
-      localStorage.setItem('shoppinglist', JSON.stringify(listItems))
+      setAndSaveItems(listItems)
   }
 
   const handleSubmit = (e) => {
